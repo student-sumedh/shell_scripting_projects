@@ -11,4 +11,6 @@ Ensure that you have the AWS Command Line Interface (CLI) installed and configur
 The script uses jq command-line JSON processor to parse and format JSON output from AWS CLI commands. Make sure jq is installed on your system.
 # Notes:
 This script provides a basic overview of AWS resource usage and may need to be customized or extended based on specific requirements.
+# project Link: 
+https://github.com/dangesumedh/shell_scripting_projects/blob/main/resource_tracker.txt
 
