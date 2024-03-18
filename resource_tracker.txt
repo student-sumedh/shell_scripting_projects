@@ -1,0 +1,36 @@
+#############################################
+# Created By: Sumedh Dange
+# Date: 18-03-2024
+# Vsersion: V1
+# This script will report AWS resource usage
+#################################################
+set -x
+# AWS S3
+# AWS EC2
+# AWS Lambda
+# AWS Iam Users
+echo
+echo "=========================================================================">resource_tracker
+#Resouce updated time
+echo "Resource usage updated at : `date`">>resource_tracker
+# List s3 buckets
+echo "print list of s3 buckets Are:">>resource_tracker
+aws s3 ls>>resource_tracker
+#list ec2 instances
+echo "print the list of ec2 instances">>resource_tracker
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'>>resource_tracker
+#list lambda
+echo "print the list of lambda functions">>resource_tracker
+aws lambda list-functions>>resource_tracker
+#list IAM users
+echo "print the list of IAM users">>resource_tracker
+aws iam list-users>>resource_tracker
+echo "=========================================================================">>resource_tracker
+
+=============================================================================
+sehduling using crontab
+0 * * * * /home/ec2-user/resource_tracker_script.sh
+
+
+
+
